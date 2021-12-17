@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Login = () => {
-    
+    const initialUser = {
+        username: '',
+        password: ''
+    }
+
+    const [ user, setUser ] = useState(initialUser);
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+    }
+
+
+
     return(<ComponentContainer>
         <ModalContainer>
             <h1>Welcome to Blogger Pro</h1>
             <h2>Please enter your account information.</h2>
+            <div>
+                <form onSubmit={onSubmit}>
+                        <Label htmlFor="username">Username: </Label>
+                        <Input id={'username'} name={'username'}/>
+                        <Label htmlFor="password">Password: </Label>
+                        <Input id={'password'} name={'password'}/>
+                        <Button id={'submit'}>Login</Button>
+                </form>
+            </div>
         </ModalContainer>
     </ComponentContainer>);
 }
