@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import Header from './Header';
 import BloomHeader from './BloomHeader';
-import Login from './Login';
-
+import Login from './Login'
+import PrivateRoute from './PrivateRoute';
 const App = () => {
   return (
     <AppContainer>
