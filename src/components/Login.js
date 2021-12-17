@@ -26,9 +26,9 @@ const Login = () => {
             .catch(err => {
                 setUser({
                     ...user,
-                    error: 'Login failed'
+                    error: err.response.data.error
                 });
-                console.error(err);
+
             })
     }
 
