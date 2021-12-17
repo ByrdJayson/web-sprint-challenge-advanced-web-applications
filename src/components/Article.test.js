@@ -1,18 +1,28 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render } from 'react-dom'
+
 import userEvent from '@testing-library/user-event';
 import MutationObserver from 'mutationobserver-shim';
-
 import Article from './Article';
-import react from "react";
+import { render } from 'react-dom/cjs/react-dom.development';
+import View from './View';
+
+
+const testArticle = {
+    id:"h2a95h",
+    headline: "TESTING",
+    author: "Test",
+    summary: "Test",
+    body: "Test"
+};
 
 test('renders component without errors', ()=> {
-    render(<Article/>);
+    render(<View/>)
 });
 
-// test('renders headline, author from the article when passed in through props', ()=> {
-// });
+test('renders headline, author from the article when passed in through props', ()=> {
+    
+});
 
 // test('renders "Associated Press" when no author is given', ()=> {
 // });
