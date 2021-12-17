@@ -2,9 +2,9 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import MutationObserver from 'mutationobserver-shim';
-import Article from './Article';
-import { render } from 'react-dom/cjs/react-dom.development';
-
+import Article from './Article.js';
+import { render } from 'react-dom';
+import App from './App.js';
 
 const testArticle = {
     id:"h2a95h",

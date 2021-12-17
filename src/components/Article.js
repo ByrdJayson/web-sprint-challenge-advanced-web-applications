@@ -26,7 +26,7 @@ const Article = (props)=> {
     </div>);
 }
 
-export default Article;
+
 
 
 const ArticleStyle = styled.div`
@@ -50,3 +50,5 @@ const ButtonContainer = styled.div`
         padding:0.5em;
     }
 `
+
+export default Article;
