@@ -19,7 +19,7 @@ In this challenge you will create a login page and request a token from the serv
 
 ## Project Instructions
 In this project, you will demonstrate your mastery of these skills by creating **a login page** and **basic CRUD application.** You will implement basic security using **token authentication** and build private routes within the application.
-
+  
 ### API Documentation
 * **[POST]** * to `http://localhost:5000/api/login`: returns a the current authenication information of the user. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda', password: 'School' }` for a successful login.
 
