@@ -13,6 +13,13 @@ const Login = () => {
         e.preventDefault();
     }
 
+    const onChange = (e) => {
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        });
+    }
+
 
 
     return(<ComponentContainer>
@@ -22,9 +29,9 @@ const Login = () => {
             <div>
                 <form onSubmit={onSubmit}>
                         <Label htmlFor="username">Username: </Label>
-                        <Input id={'username'} name={'username'}/>
+                        <Input id={'username'} name={'username'} onChange={onChange}/>
                         <Label htmlFor="password">Password: </Label>
-                        <Input id={'password'} name={'password'}/>
+                        <Input id={'password'} name={'password'} onChange={onChange}/>
                         <Button id={'submit'}>Login</Button>
                 </form>
             </div>
