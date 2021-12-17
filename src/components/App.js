@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route } from "react-router-dom";
 import styled from 'styled-components';
 import View from './View';
@@ -8,16 +8,19 @@ import Login from './Login';
 import Logout from './Logout';
 import PrivateRoute from './PrivateRoute';
 const App = () => {
+
+    const [ loggedIn, setLoggedIn ] = useState();
+
   return (
     <AppContainer>
       <BloomHeader/>
-      <Header/>
+      <Header loggedIn={loggedIn}/>
       <RouteContainer>
         <Route exact path="/">
-          <Login/>
+          <Login setLoggedIn={setLoggedIn}/>
         </Route>
         <Route path={'/login'}>
-            <Login/>
+            <Login setLoggedIn={setLoggedIn}/>
         </Route>
         <PrivateRoute path={'/view'} component={View} />
         <PrivateRoute path={'/logout'} component={Logout}/>

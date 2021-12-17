@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Header = () => {
+const Header = (props) => {
     const token = localStorage.getItem('token');
     return(
         <HeaderStyle>
             <p>Blogger Pro</p>
             <MenuStyle>
-                <li><Link to="/">Login</Link></li>
+                <li>{!props.loggedIn && <Link to="/">Login</Link>}</li>
                 <li><Link to="view">View</Link></li>
-                <li>{ token && <Link to="logout">Logout</Link>}</li>
+                <li>{props.loggedIn && <Link to="logout">Logout</Link>}</li>
             </MenuStyle>
         </HeaderStyle>
     );

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axiosWithAuth from "../utils/axiosWithAuth";
-import {useHistory} from "react-router-dom";
-const Login = () => {
+import {Redirect, useHistory} from "react-router-dom";
+const Login = (props) => {
+    if(localStorage.getItem('token')){
+        return <Redirect to={'view'}/>
+    }
+
     const initialUser = {
         username: '',
         password: '',
@@ -17,6 +21,7 @@ const Login = () => {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('username', res.data.username);
                 localStorage.setItem('role', res.data.role);
+                props.setLoggedIn(true);
                 setUser({
                     ...user,
                     error: ''
