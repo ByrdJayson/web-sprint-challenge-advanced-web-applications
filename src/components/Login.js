@@ -27,7 +27,7 @@ const Login = () => {
                 setUser({
                     ...user,
                     error: 'Login failed'
-                })
+                });
                 console.error(err);
             })
     }
