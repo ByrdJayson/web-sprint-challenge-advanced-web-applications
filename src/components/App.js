@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import styled from 'styled-components';
-
+import View from './View';
 import Header from './Header';
 import BloomHeader from './BloomHeader';
-import Login from './Login'
+import Login from './Login';
+import Logout from './Logout';
 import PrivateRoute from './PrivateRoute';
 const App = () => {
   return (
@@ -14,7 +15,12 @@ const App = () => {
       <RouteContainer>
         <Route exact path="/">
           <Login/>
-        </Route>          
+        </Route>
+        <Route path={'/login'}>
+            <Login/>
+        </Route>
+        <PrivateRoute path={'/view'} component={<View/>}/>
+        <PrivateRoute path={'/logout'} component={<Logout/>}/>
       </RouteContainer>
     </AppContainer>
   )
