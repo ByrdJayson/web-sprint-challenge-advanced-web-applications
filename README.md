@@ -117,9 +117,10 @@ In this project, you will demonstrate your mastery of these skills by creating *
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. Explain what a token is used for.
-
+Tokens are used to confirm that a user is who they say they are.
 2. What steps can you take in your web apps to keep your data secure?
-
+You can ensure data security by enforcing strong passwords, doing extensive vulnerability tesing, and keeping dependencies updated.
 3. Describe how web servers work.
-
+Web servers work by receiving requests. They take these requests, run them against data that is available on the server, and sending a response back. 
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+Http pethods mapped to the CRUD acronym are PUT, POST, DELETE, and GET.
