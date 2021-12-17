@@ -1,11 +1,9 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-
 import userEvent from '@testing-library/user-event';
 import MutationObserver from 'mutationobserver-shim';
 import Article from './Article';
 import { render } from 'react-dom/cjs/react-dom.development';
-import View from './View';
 
 
 const testArticle = {
@@ -17,7 +15,7 @@ const testArticle = {
 };
 
 test('renders component without errors', ()=> {
-    render(<View/>)
+    render(<Article/>)
 });
 
 test('renders headline, author from the article when passed in through props', ()=> {
