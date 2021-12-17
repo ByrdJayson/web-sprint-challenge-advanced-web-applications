@@ -1,16 +1,40 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import axiosWithAuth from "../utils/axiosWithAuth";
+import {useHistory} from "react-router-dom";
 const Login = () => {
     const initialUser = {
         username: '',
-        password: ''
+        password: '',
+        error: ''
     }
 
     const [ user, setUser ] = useState(initialUser);
+    const { push } = useHistory();
+    const login = () => {
+        axiosWithAuth().post('/login', user)
+            .then(res => {
+                localStorage.setItem('token', res.data.token);
+                localStorage.setItem('username', res.data.username);
+                localStorage.setItem('role', res.data.role);
+                setUser({
+                    ...user,
+                    error: ''
+                });
+            push('/view')
+            })
+            .catch(err => {
+                setUser({
+                    ...user,
+                    error: 'Login failed'
+                })
+                console.error(err);
+            })
+    }
 
     const onSubmit = (e) => {
         e.preventDefault();
+        login(user);
     }
 
     const onChange = (e) => {
@@ -34,6 +58,7 @@ const Login = () => {
                         <Input id={'password'} name={'password'} onChange={onChange}/>
                         <Button id={'submit'}>Login</Button>
                 </form>
+                <p id={'error'}>{user.error}</p>
             </div>
         </ModalContainer>
     </ComponentContainer>);
