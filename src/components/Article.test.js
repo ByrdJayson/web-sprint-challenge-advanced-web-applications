@@ -13,7 +13,7 @@ const testArticle = {
     summary: "Test",
     body: "Test"
 };
-
+describe('Article.test.js', () => {
 test('renders component without errors', ()=> {
     render(<Article/>)
 });
@@ -30,3 +30,4 @@ test('renders headline, author from the article when passed in through props', (
 
 //Task List:
 //1. Complete all above tests. Create test article data when needed.
+});
